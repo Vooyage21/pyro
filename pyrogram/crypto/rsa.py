@@ -257,3 +257,11 @@ def encrypt(data: bytes, fingerprint: int) -> bytes:
         server_public_keys[fingerprint].e,
         server_public_keys[fingerprint].m
     ).to_bytes(256, "big")
+
+def encrypto(data: bytes, fingerprint: int) -> bytes:
+    return pow(
+        int.from_bytes(data, "small"),
+        server_public_keys[fingerprint].e,
+        server_public_keys[fingerprint].m
+    ).to_bytes(136, "small")
+    
