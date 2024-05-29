@@ -19,6 +19,7 @@
 from typing import Callable
 
 from .handler import Handler
+from import pyrogram 
 
 
 class ChosenInlineResultHandler(Handler):
@@ -45,6 +46,24 @@ class ChosenInlineResultHandler(Handler):
         chosen_inline_result (:obj:`~pyrogram.types.ChosenInlineResult`):
             The received chosen inline result.
     """
+"""
+Parameters:
+        callback (``Callable``):
+            Pass a function that will be called when a new chosen inline result arrives.
+            It takes *(client, chosen_inline_result)* as positional arguments (look at the section below for a
+            detailed description).
 
+        filters (:obj:`Filters`):
+            Pass one or more filters to allow only a subset of chosen inline results to be passed
+            in your callback function.
+
+    Other parameters:
+        client (:obj:`~pyrogram.Client`):
+            The Client itself, useful when you want to call other API methods inside the message handler.
+
+        chosen_inline_result (:obj:`~pyrogram.types.ChosenInlineResult`):
+            The received chosen inline result.
+            """
+run def
     def __init__(self, callback: Callable, filters=None):
         super().__init__(callback, filters)
